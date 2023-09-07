@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Link from '@mui/material/Link';
+import { useNavigate } from 'react-router-dom';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -22,6 +23,8 @@ const defaultTheme = createTheme();
 export default function SignInSide() {
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
+  const navigate = useNavigate();
+
   const [recaptchaValue, setRecaptchaValue] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +46,7 @@ export default function SignInSide() {
         title: 'Inicio de sesión exitoso',
         text: 'Bienvenido, administrador!',
       });
+      navigate('/characters');
     } else {
       Swal.fire({
         icon: 'error',
