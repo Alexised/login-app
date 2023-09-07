@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 import ReCAPTCHA from 'react-google-recaptcha';
+import Link from '@mui/material/Link';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -115,7 +116,7 @@ export default function SignInSide() {
         />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="Recordarme"
               />
               <Button
                 type="submit"
@@ -123,9 +124,15 @@ export default function SignInSide() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                iniciar session
               </Button>
-
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    olvidaste tu contraseña
+                  </Link>
+                </Grid>
+              </Grid>
             </Box>
           </Box>
         </Grid>
